@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bank Account Management</title>
+  <style>
+    /* CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+     background-image: url('images/bankerBackground.jpeg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"] {
+      padding: 5px;
+      width: 200px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .section {
+      width: 48%;
+    }
+
+    .section h2 {
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .button-container {
+      text-align: left;
+      margin-top: 20px;
+    }
+
+    .button-container button {
+      padding: 10px 20px;
+      background-color: #000000;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .button-container button:hover {
+      background-color: #800000;
+    }
+    .dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.dropdown label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.dropdown select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #f2f2f2;
+  cursor: pointer;
+}
+
+.dropdown select::-ms-expand {
+  display: none;
+}
+
+.dropdown select:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown select option {
+  padding: 8px;
+}
+.dropdown-arrow {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translate(-10%, 250%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #999;
+  pointer-events: none;
+}
+  </style>
+  <style>
+  .floating-button {
+   position: fixed;
+   bottom: 675px;
+   right: 25px;
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+   background-image: url('images/back2-01.png');
+   background-size: cover; /* Adjust the background size if needed */
+   background-repeat: no-repeat; /* Ensure the image doesn't repeat */
+   background-position: center; /* Center the image within the button */
+   text-align: center;
+   font-size: 0; /* Remove the font size to make the image fill the entire button */
+   line-height: 60px;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+   z-index: 9999;
+  }
+
+  </style>
+
+
+  </head>
+  <body>
+   <a href="BankerHomePage.html" class="floating-button"></a>
+  <h1>Bank Account Management</h1>
+
+  <form id="accountForm">
+    <section>
+      <div class="wrap-input100 validate-input m-b-23" data-validate = "no. is required">
+        <span class="label-input100">Account Number</span>
+        <br> <br>
+        <input class="input100" id="username" type="text" name="username" placeholder="Type your Account no.">
+        <span class="focus-input100" data-symbol="&#xf206;"></span>
+      </div>
+    <!-- <label for="accountNumber">Account Number:</label>
+  <input type="number" id="accountType" placeholder="Enter account number" required> -->
+</section>
+<br> <br>
+    <div class="dropdown">
+   <label for="dropdown">Account Type :</label> <br>
+   <select id="dropdown">
+    <option value="option1">Savings Account</option>
+    <option value="option2">Current Account</option>
+    <option value="option3">Salary Account</option>
+    <option value="option3">Fixed Deposit Account</option>
+  </select>
+  <span class="dropdown-arrow"></span>
+</div>
+
+<br>
+<br>
+    <div class="button-container">
+      <button type="submit" id="openAccountButton">Open Account</button>
+      <button type="button" id="closeAccountButton">Close Account</button>
+    </div>
+  </form>
+
+
+<br>
+
+
+  <div class="container">
+    <div class="section">
+      <h2>Requested Accounts</h2>
+      <ul id="requestedAccounts">
+        <!-- Requested account items will be dynamically added here -->
+        <p>Account number: 145768123190 <a href="/uploads/media/default/0001/01/540cb75550adf33f281f29132dddd14fded85bfc.pdf">client Application</a>.</p>
+        <p>Account number: 254433736262 <a href="/uploads/media/default/0001/01/540cb75550adf33f281f29132dddd14fded85bfc.pdf">client Application</a>.</p>
+        <p>Account number: 336282830274 <a href="/uploads/media/default/0001/01/540cb75550adf33f281f29132dddd14fded85bfc.pdf">client Application</a>.</p>
+      </ul>
+    </div>
+<br><br>
+
+    <div class="section">
+      <h2>Existing Accounts</h2>
+      <ul id="existingAccounts">
+        <p>Account number: 145768123190 <a href="/uploads/media/default/0001/01/540cb75550adf33f281f29132dddd14fded85bfc.pdf">client Application</a>.</p>
+        <p>Account number: 254433736262 <a href="/uploads/media/default/0001/01/540cb75550adf33f281f29132dddd14fded85bfc.pdf">client Application</a>.</p>
+        <p>Account number: 336282830274 <a href="/uploads/media/default/0001/01/540cb75550adf33f281f29132dddd14fded85bfc.pdf">client Application</a>.</p>
+
+    </ul>
+    </div>
+    </div>
+    <div id="dropDownSelect1"></div>
+    <script>
+
+    // JavaScript code
+    const accountForm = document.getElementById('accountForm');
+    const openAccountButton = document.getElementById('openAccountButton');
+    const closeAccountButton = document.getElementById('closeAccountButton');
+    const requestedAccounts = document.getElementById('requestedAccounts');
+    const existingAccounts = document.getElementById('existingAccounts');
+
+    // Event listener for opening an account
+    accountForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const accountNumber = document.getElementById('accountNumber').value;
+      const accountType = document.getElementById('accountType').value;
+
+      // Perform necessary actions to open the account
+      openAccount(accountNumber, accountType);
+      accountForm.reset();
+    });
+
+    // Event listener for closing an account
+    closeAccountButton.addEventListener('click', function() {
+      const accountNumber = document.getElementById('accountNumber').value;
+
+      // Perform necessary actions to close the account
+      closeAccount(accountNumber);
+      accountForm.reset();
+    });
+
+    // Function to open an account
+    function openAccount(accountNumber, accountType) {
+      // Perform necessary actions to open the account
+      const listItem = document.createElement('li');
+      listItem.textContent = `${accountNumber} - ${accountType}`;
+      requestedAccounts.appendChild(listItem);
+      listItem.addEventListener('click', function() {
+        moveAccountToExisting(this);
+      });
+    }
+
+    // Function to close an account
+    function closeAccount(accountNumber) {
+      // Perform necessary actions to close the account
+      const listItem = existingAccounts.querySelector(`li[data-account="${accountNumber}"]`);
+      if (listItem) {
+        listItem.remove();
+      }
+    }
+
+    // Function to move a requested account to existing accounts
+    function moveAccountToExisting(accountItem) {
+      const accountNumber = accountItem.dataset.account;
+      const accountType = accountItem.textContent.split(' - ')[1];
+      const listItem = document.createElement('li');
+      listItem.textContent = `${accountNumber} - ${accountType}`;
+      listItem.dataset.account = accountNumber;
+      existingAccounts.appendChild(listItem);
+      accountItem.remove();
+    }
+
+  </script>
+
+</body>
+</html>
