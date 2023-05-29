@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>HQR-Log in</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+<style>
+.floating-button {
+	position: fixed;
+	bottom: 675px;
+	right: 25px;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background-image: url('images/back2-01.png');
+	background-size: cover; /* Adjust the background size if needed */
+	background-repeat: no-repeat; /* Ensure the image doesn't repeat */
+	background-position: center; /* Center the image within the button */
+	text-align: center;
+	font-size: 0; /* Remove the font size to make the image fill the entire button */
+	line-height: 60px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	z-index: 9999;
+}
+
+</style>
+
+
+</head>
+<body>
+	<a href="GuestPage.html" class="floating-button"></a>
+
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('images/bgx-01.jpg');">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+				<form class="login100-form validate-form">
+					<span class="login100-form-title p-b-49">
+						Log in
+					</span>
+
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is required">
+						<span class="label-input100">Username</span>
+						<input class="input100" id="username" type="text" name="username" placeholder="Type your username">
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<span class="label-input100">Password</span>
+						<input class="input100" id="password" type="password" name="pass" placeholder="Type your password">
+						<span class="focus-input100" data-symbol="&#xf190;"></span>
+					</div>
+
+					<div class="text-right p-t-8 p-b-31">
+						<a href="#">
+							Forgot password?
+						</a>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button type="submit" id="dareen"class="btn btn-primary btn-user btn-block">
+								Login
+						 </button>
+						</div>
+					</div>
+					<div class="flex-col-c p-t-155">
+						<span class="txt1 p-b-17">
+							Or Sign Up
+						</span>
+
+						<a href="register.html" class="txt2">
+							Sign Up
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+	<script>
+    var form = document.querySelector('.login100-form');
+    form.addEventListener('submit', handleSubmit);
+
+    function handleSubmit(event) {
+        event.preventDefault();
+
+        var usernameInput = document.getElementById('username');
+        var passwordInput = document.getElementById('password');
+
+        if (usernameInput.value === 'admin' )
+            window.location.href = 'Admin.html';
+        else if (usernameInput.value === 'user' )
+            window.location.href = 'SelectAccount.html';
+        else if (usernameInput.value === 'banker' &&  passwordInput.value === 'banker')
+            window.location.href = 'BankerHomePage.html';
+        else
+            alert('Invalid username or password');
+    }
+</script>
+
+
+</body>
+</html>
