@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>HQR-LoanApp</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main2.css">
+<!--===============================================================================================-->
+<script src="https://kit.fontawesome.com/1a4c852b50.js" crossorigin="anonymous"></script>
+<style>
+.containerA {
+		max-width: 500px;
+		margin: 0 auto;
+		background-color: #ffffff;
+		padding: 20px;
+		border-radius: 5px;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+		opacity: 0;
+		transform: translateY(20px);
+		animation: fadeUp 0.5s ease 0.2s forwards;
+
+}
+</style>
+<style>
+	 /* Styles for the pop-up overlay */
+	 .overlay {
+		 display: none;
+		 position: fixed;
+		 top: 0;
+		 left: 0;
+		 width: 100%;
+		 height: 100%;
+		 background-color: rgba(0, 0, 0, 0.5);
+		 z-index: 9999;
+	 }
+
+	 /* Styles for the pop-up content */
+	 .popup {
+		 display: none;
+		 position: fixed;
+		 top: 50%;
+		 left: 50%;
+		 transform: translate(-50%, -50%);
+		 width: 400px;
+		 padding: 20px;
+		 background-color: #fff;
+		 border-radius: 5px;
+		 box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+		 z-index: 99999;
+	 }
+
+	 .popup h2 {
+		 font-family: cocon;
+
+		 margin-top: 0;
+	 }
+
+	 .popup p {
+		 font-family: cocon;
+
+		 margin: 10px 0;
+	 }
+ </style>
+
+
+
+ <style>
+ .floating-button {
+ 	position: fixed;
+ 	bottom: 675px;
+ 	right: 25px;
+ 	width: 30px;
+ 	height: 30px;
+ 	border-radius: 50%;
+ 	background-image: url('images/back2-01.png');
+ 	background-size: cover; /* Adjust the background size if needed */
+ 	background-repeat: no-repeat; /* Ensure the image doesn't repeat */
+ 	background-position: center; /* Center the image within the button */
+ 	text-align: center;
+ 	font-size: 0; /* Remove the font size to make the image fill the entire button */
+ 	line-height: 60px;
+ 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+ 	z-index: 9999;
+ }
+
+ </style>
+
+
+ </head>
+ <body>
+ 	<a href="4 Transfers (1).html" class="floating-button"></a>
+
+	<div class="limiter">
+
+		<div class="container-login100" style="background-image: url('images/bgx-01.jpg');">
+
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+
+				<form class="login100-form validate-form">
+					<span class="login100-form-title p-b-49">
+						International Transfer
+					</span>
+
+
+
+					<div class="wrap-input100 validate-input" data-validate="Amount is required">
+						<span class="label-input100">Beneficiary's First & Middle Name</span>
+						<input class="input100" type="text" name="email" placeholder="Enter your rate">
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate="Bank name is required">
+						<span class="label-input100">Beneficiary's Bank Name</span>
+						<input class="input100" type="text" name="email" placeholder="Enter name">
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate="Country is required">
+						<span class="label-input100">Beneficiary's Country</span>
+						<input class="input100" type="text" name="email" placeholder="Enter country">
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate="Amount is required">
+						<span class="label-input100">IBAN/Credit Card Number</span>
+						<input class="input100" type="text" name="email" placeholder="Enter IBAN/Credit Card Number">
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate="currency is required">
+						<span class="label-input100">Currency</span>
+						<input class="input100" type="text" name="email" placeholder="Enter currency">
+						<span class="focus-input100" data-symbol="&#xa3;"></span>
+					</div>
+          <div class="wrap-input100 validate-input" data-validate="Phone number is required">
+            <span class="label-input100">Beneficiary's Phone number</span>
+            <input class="input100" type="tel" name="pass" placeholder="Enter  phone number">
+            <span class="focus-input100" data-symbol="&#x260E;"></span>
+          </div>
+          <div class="wrap-input100 validate-input" data-validate="Amount is required">
+            <span class="label-input100">Transfer Amount</span>
+            <input class="input100" type="text" name="email" placeholder="Enter amonunt">
+            <span class="focus-input100" data-symbol="&#xa3;"></span>
+          </div>
+
+
+					<div class="wrap-input100 validate-input" >
+						<span class="label-input100">Transfer Details</span>
+						<input class="input100" type="text" name="email" placeholder="Enter transfer details">
+						<span class="focus-input100" data-symbol="&#x3f;"></span>
+					</div>
+
+
+
+						<div class="wrap-input100 validate-input" data-validate="Salary certificate is required">
+								<title>File Upload</title>
+
+							<form>
+
+	 				   </form>
+						 	</div>
+
+
+
+						                     <br><br>
+
+
+
+																 <div class="container-login100-form-btn">
+															 		<div class="wrap-login100-form-btn">
+															 			<div class="login100-form-bgbtn"></div>
+
+															 			<button class="login100-form-btn"onclick="showPopup()">Submit</button>
+															 			<div id="overlay" class="overlay"></div>
+
+															 				<div id="popup" class="popup">
+																				<h2>Transfer successful</h2>
+
+															 					<div class="container-login100-form-btn">
+															 						<div class="wrap-login100-form-btn">
+															 							<div class="login100-form-bgbtn"></div>
+															 					<button class="login100-form-btn" onclick="redirectHome()">Home</button>
+															 					</div>
+															 					</div>
+
+															 				<br>
+
+															 					<div class="container-login100-form-btn">
+															 						<div class="wrap-login100-form-btn">
+															 							<div class="login100-form-bgbtn"></div>
+															 					<button class="login100-form-btn" onclick="clearContent()">Close</button>
+
+
+															 				</div>
+
+															 		</div>
+															 	</div>
+
+
+
+
+
+
+			</div>
+
+		</div>
+		</div>
+
+
+
+
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+	<script>
+	function showPopup() {
+		// Display the overlay and the pop-up content
+		var overlay = document.getElementById("overlay");
+		overlay.style.display = "block";
+		var popup = document.getElementById("popup");
+		popup.style.display = "block";
+	}
+
+	function closePopup() {
+		// Close the overlay and the pop-up content
+		var overlay = document.getElementById("overlay");
+		overlay.style.display = "none";
+		var popup = document.getElementById("popup");
+		popup.style.display = "none";
+	}
+	function redirectHome() {
+			// Redirect to a different page
+			window.location.href = "ChomePage.html";
+		}
+		function clearContent() {
+		 // Clear the content or perform any other necessary actions
+		 // ...
+
+		 // Reload the page
+		 window.location.reload();
+	 }
+</script>
+
+
+</body>
+</html>
