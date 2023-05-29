@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bank Account Transactions</title>
+  <style>
+    /* CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      padding: 20px;background-image: url('images/bgg-01.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .container {
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 20px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .transaction-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .transaction-item {
+      margin-bottom: 10px;
+      padding: 10px;
+      background-color: #f7f7f7;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+    }
+
+    .transaction-item .transaction-info {
+      flex-grow: 1;
+    }
+
+    .transaction-item .transaction-recipient {
+      font-weight: bold;
+    }
+
+    .transaction-item .transaction-amount {
+      margin-left: 10px;
+      color: #777;
+    }
+
+    .transaction-item .transaction-description {
+      margin-left: 10px;
+      color: #777;
+    }
+
+    .transaction-item .transaction-date {
+      margin-left: 10px;
+      color: #999;
+    }
+
+    /* Animation styles */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 1.2s ease-in-out;
+    }
+  </style>
+
+  <style>
+  .floating-button {
+   position: fixed;
+   bottom: 675px;
+   right: 25px;
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+   background-image: url('images/back2-01.png');
+   background-size: cover; /* Adjust the background size if needed */
+   background-repeat: no-repeat; /* Ensure the image doesn't repeat */
+   background-position: center; /* Center the image within the button */
+   text-align: center;
+   font-size: 0; /* Remove the font size to make the image fill the entire button */
+   line-height: 60px;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+   z-index: 9999;
+  }
+
+  </style>
+
+
+  </head>
+  <body>
+   <a href="Transacations.html" class="floating-button"></a>
+  <div class="container">
+    <h1>Bank Account Transactions</h1>
+    <ul class="transaction-list" id="transactionList"></ul>
+  </div>
+
+  <script>
+    // JavaScript code
+    const transactionList = document.getElementById('transactionList');
+
+    // Sample transaction data
+    const transactions = [
+      { recipient: 'Vodafone ', amount: 500, description: 'Payment', date: '2023-05-01' },
+      { recipient: 'Nandoz fried elshicken', amount: 1000, description: 'Online purchase', date: '2023-05-03' },
+      { recipient: 'Mike Johnson', amount: 750, description: 'Withdrawal', date: '2023-05-05' },
+      { recipient: 'Jane Smith', amount: 1000, description: 'Online purchase', date: '2023-05-03' },
+      { recipient: 'Mike Johnson', amount: 750, description: 'Withdrawal', date: '2023-05-05' },
+      { recipient: 'Jane Smith', amount: 1000, description: 'Online purchase', date: '2023-05-03' },
+      { recipient: 'Mike Johnson', amount: 750, description: 'Withdrawal', date: '2023-05-05' },
+      { recipient: 'Mike Johnson', amount: 750, description: 'Withdrawal', date: '2023-05-05' },
+      { recipient: 'Jane Smith', amount: 1000, description: 'Online purchase', date: '2023-05-03' },
+      { recipient: 'Mike Johnson', amount: 750, description: 'Withdrawal', date: '2023-05-05' },
+      { recipient: 'Jane Smith', amount: 1000, description: 'Online purchase', date: '2023-05-03' },
+      { recipient: 'Mike Johnson', amount: 750, description: 'Withdrawal', date: '2023-05-05' }
+
+    ];
+
+    // Display transactions
+    transactions.forEach(transaction => {
+      const listItem = document.createElement('li');
+      listItem.classList.add('transaction-item', 'fade-in');
+
+      const recipientElement = document.createElement('div');
+      recipientElement.classList.add('transaction-recipient');
+      recipientElement.textContent = `Recipient: ${transaction.recipient}`;
+
+      const amountElement = document.createElement('div');
+      amountElement.classList.add('transaction-amount');
+      amountElement.textContent = `Amount: $${transaction.amount}`;
+
+      const descriptionElement = document.createElement('div');
+      descriptionElement.classList.add('transaction-description');
+      descriptionElement.textContent = `Description: ${transaction.description}`;
+
+      const dateElement = document.createElement('div');
+      dateElement.classList.add('transaction-date');
+      dateElement.textContent = `Date: ${transaction.date}`;
+
+      listItem.appendChild(recipientElement);
+      listItem.appendChild(amountElement);
+      listItem.appendChild(descriptionElement);
+      listItem.appendChild(dateElement);
+
+      transactionList.appendChild(listItem);
+    });
+  </script>
+</body>
+</html>

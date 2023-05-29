@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>HQR-Register</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+<script src="https://kit.fontawesome.com/1a4c852b50.js" crossorigin="anonymous"></script>
+<style >
+ k {
+   position: absolute;
+  left: 28px;
+  down: 10%;
+  transform: translate(-80% , -230%) ;
+ }
+ i {
+   position: absolute;
+  left: 28px;
+  down: 10%;
+  transform: translate(-90% , -230%) ;
+ }
+ </style>
+
+
+
+
+<style>
+.floating-button {
+	position: fixed;
+	bottom: 675px;
+	right: 25px;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background-image: url('images/back2-01.png');
+	background-size: cover; /* Adjust the background size if needed */
+	background-repeat: no-repeat; /* Ensure the image doesn't repeat */
+	background-position: center; /* Center the image within the button */
+	text-align: center;
+	font-size: 0; /* Remove the font size to make the image fill the entire button */
+	line-height: 60px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	z-index: 9999;
+}
+
+</style>
+
+
+</head>
+<body>
+	<a href="GuestPage.html" class="floating-button"></a>
+
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('images/bgx-01.jpg');">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+				<form class="login100-form validate-form">
+					<span class="login100-form-title p-b-49">
+						Register
+					</span>
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Name is required">
+						<span class="label-input100">Name</span>
+						<input class="input100" type="text" name="username" placeholder="Type your full name">
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is required">
+						<span class="label-input100">Username</span>
+						<input class="input100" type="text" name="username" placeholder="Type your username">
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<span class="label-input100">Password</span>
+						<input class="input100" type="password" name="pass" placeholder="Type your password">
+						<span class="focus-input100" data-symbol="&#xf190;"></span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<span class="label-input100">Confirm password</span>
+						<input class="input100" type="password" name="pass" placeholder="Re-enter password">
+						<span class="focus-input100" data-symbol="&#xf190;"></span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate="Date of Birth is required">
+						<span class="label-input100">Date of Birth</span>
+						<input class="input100" type="date" name="Date" placeholder="Type your date of birth">
+<i class="fa-solid fa-calendar-days" style="color: #9e9e9e;"></i>				</div>
+					<div class="wrap-input100 validate-input" data-validate="National ID is required">
+						<span class="label-input100">National ID</span>
+					  	<input class="input100" type="text" name="ID" placeholder="Enter your national ID">
+							<span class="focus-input100" data-symbol="&#xf206;"></span>
+
+					</div>
+					<div class="wrap-input100 validate-input" data-validate="Email is required">
+						<span class="label-input100">Email</span>
+						<input class="input100" type="text" name="email" placeholder="Enter your email address">
+						<span class="focus-input100" data-symbol="&#x2709;"></span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate="Phone number is required">
+						<span class="label-input100">Phone number</span>
+						<input class="input100" type="tel" name="pass" placeholder="Enter your phone number">
+						<span class="focus-input100" data-symbol="&#x260E;"></span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate="Address is required">
+						<span class="label-input100">Address</span>
+						<input class="input100" type="text" name="address" placeholder="Enter your address">
+						 <k class="fa-solid fa-house" style="color: #9e9e9e;"></k>
+</div>
+					<div class="wrap-input100 validate-input" data-validate="National ID is required">
+						<span class="label-input100">Upload your national ID</span>
+						<m class="fa-solid fa-arrow-up-from-bracket"></m>
+							<title>File Upload</title>
+						<form>
+ 					  <input type = "file" name = "upload" accept = "application/pdf" />
+ 				   </form>
+					 	</div>
+
+
+						<input type="checkbox" name="terms" id="terms" onchange="activateButton(this)">  I Agree on <a href="https://www.nbe.com.eg/AssetsManager/e55d86d1-c8b4-4d9c-82d1-f5c1a7ad641b.pdf"> Terms & Conditions</a>
+						                     <br><br>
+
+
+
+
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn" onclick="redirectLogin()">
+							Register
+							</button>
+						</div>
+					</div>
+
+
+					<!-- <div class="flex-c-m">
+						<a href="#" class="login100-social-item bg1">
+							<i class="fa fa-facebook"></i>
+						</a>
+
+						<a href="#" class="login100-social-item bg2">
+							<i class="fa fa-twitter"></i>
+						</a>
+
+						<a href="#" class="login100-social-item bg3">
+							<i class="fa fa-google"></i>
+						</a>
+					</div> -->
+
+
+
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+	<script>
+	function redirectLogin() {
+			// Redirect to a different page
+			window.location.href = "login.html";
+		}
+	</script>
+
+</body>
+</html>

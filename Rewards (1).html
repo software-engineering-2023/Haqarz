@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redeem Points</title>
+    <style>
+
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.5s ease 0.2s forwards;
+
+        }
+
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .heading {
+            text-align: center;
+            color: #000000;
+
+
+        }
+
+        .points-container {
+            margin-top: 30px;
+						color: #ffffff;
+        }
+
+        .points-container p {
+            text-align: center;
+            font-size: 25px;
+            margin-bottom: 10px;
+						  color: #800000;
+        }
+
+        .reward-card {
+            background-color: #f8f8f8;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.5s ease 0.4s forwards;
+        }
+
+        .reward-card:nth-child(2) {
+            animation-delay: 0.6s;
+						  color: #0000000;
+        }
+
+        .reward-card:nth-child(3) {
+            animation-delay: 0.8s;
+						  color: #0000000;
+        }
+
+        .reward-card.show {
+            opacity: 1;
+            transform: translateY(0);
+						  color: #000000;
+        }
+
+        .reward-card h2 {
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 10px;
+						  color: #000000;
+        }
+
+        .reward-card p {
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 20px;
+						  color: #000000;
+        }
+
+        .points-needed {
+            font-weight: bold;
+						  color: #000000;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #000000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.5s ease 1s forwards;
+        }
+
+        button.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        button:hover {
+            background-color: #800000;
+        }
+
+        button:active {
+            background-color: #3e8e41;
+        }
+    </style>
+
+
+<style>
+.floating-button {
+ position: fixed;
+ bottom: 675px;
+ right: 25px;
+ width: 30px;
+ height: 30px;
+ border-radius: 50%;
+ background-image: url('images/back2-01.png');
+ background-size: cover; /* Adjust the background size if needed */
+ background-repeat: no-repeat; /* Ensure the image doesn't repeat */
+ background-position: center; /* Center the image within the button */
+ text-align: center;
+ font-size: 0; /* Remove the font size to make the image fill the entire button */
+ line-height: 60px;
+ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+ z-index: 9999;
+}
+
+</style>
+
+
+</head>
+<body>
+ <a href="ChomePage.html" class="floating-button"></a>
+    <div class="container">
+			<style>
+
+			body {
+			  background-image: url('images/bgg-01.jpg');
+			  background-repeat: no-repeat;
+			  background-attachment: fixed;
+			  background-size: 100% 100%;
+			}
+</style>
+<style>
+
+
+</style>
+        <h1 class="heading">Redeem Points</h1>
+        <div class="points-container">
+            <p>Your current points: <span id="points">100</span></p>
+            <div class="reward-card">
+                <h2>Gift Card</h2>
+                <p>Redeem <span class="points-needed">50</span> points for a $50 cashback.</p>
+                <button onclick="redeemPoints(50)">Redeem</button>
+            </div>
+            <div class="reward-card">
+                <h2>Electronics</h2>
+                <p>Redeem <span class="points-needed">100</span> points for a Bluetooth speaker.</p>
+                <button onclick="redeemPoints(100)">Redeem</button>
+            </div>
+            <div class="reward-card">
+                <h2>Travel Voucher</h2>
+                <p>Redeem <span class="points-needed">200</span> points for a $200 travel voucher.</p>
+                <button onclick="redeemPoints(200)">Redeem</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
