@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-image: url('images/bankerBackground.jpeg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    h1 {
+      text-align: center;
+      color: #800000;
+    }
+
+    h2 {
+      margin-top: 30px;
+      color: #800000;
+    }
+
+    .application {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+      background-color: rgba(255, 255, 255, 0.2); /* Decreased opacity */
+    }
+
+    .approve-btn,
+    .disapprove-btn {
+      padding: 5px 10px;
+      background-color: #00700d;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-right: 5px;
+    }
+
+    .approve-btn:hover,
+    .disapprove-btn:hover {
+      background-color: #000000;
+    }
+
+    .disapprove-btn {
+      background-color:#800000;
+    }
+
+    .approved {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+    }
+  </style>
+  <style>
+  .floating-button {
+  	position: fixed;
+  	bottom: 660px;
+  	right: 25px;
+  	width: 30px;
+  	height: 30px;
+  	border-radius: 50%;
+  	background-image: url('images/back2-01.png');
+  	background-size: cover; /* Adjust the background size if needed */
+  	background-repeat: no-repeat; /* Ensure the image doesn't repeat */
+  	background-position: center; /* Center the image within the button */
+  	text-align: center;
+  	font-size: 0; /* Remove the font size to make the image fill the entire button */
+  	line-height: 60px;
+  	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  	z-index: 9999;
+  }
+
+  </style>
+
+
+  </head>
+  <body>
+  	<a href="Login.html" class="floating-button"></a>
+  <h1>Hello Admin</h1>
+
+  <h2>Technical reports</h2>
+  <div id="applications"></div>
+
+  <h2>Approved Requests</h2>
+  <div id="approvedRequests"></div>
+
+  <script>
+    // Sample list of applications (replace with actual data)
+    const applications = [
+      {ID: 1},
+      {ID: 2},
+      {ID: 3}
+    ];
+
+    // Display applications on the page
+    const applicationsDiv = document.getElementById('applications');
+    const approvedRequestsDiv = document.getElementById('approvedRequests');
+    applications.forEach(application => {
+      const applicationDiv = document.createElement('div');
+      applicationDiv.classList.add('application');
+      applicationDiv.innerHTML = `
+			<head>
+	    <title>Title of the document</title>
+	  </head>
+	  <body>
+		  <p>ID: 1000000</a>.</p>
+	    <p>View: <a href="/uploads/media/default/0001/01/540cb75550adf33f281f29132dddd14fded85bfc.pdf">Technical reports</a>.</p>
+	  </body>
+        <button class="approve-btn" onclick="confirmAction(approveApplication, ${application.id})">Approve</button>
+        <button class="disapprove-btn" onclick="confirmDisapproval(${application.id})">Disapprove</button>
+      `;
+      applicationsDiv.appendChild(applicationDiv);
+    });
+
+    // Function to handle application approval
+    function approveApplication(applicationId) {
+      // Find the approved application
+      const approvedApplication = applications.find(application => application.id === applicationId);
+      if (approvedApplication) {
+        // Remove the approved application from the applications list
+        const index = applications.indexOf(approvedApplication);
+        applications.splice(index, 1);
+
+        // Remove the application div from the applications section
+        const applicationDiv = document.querySelector(`.application:nth-child(${index + 1})`);
+        if (applicationDiv) {
+          applicationDiv.remove();
+        }
+
+        // Create a new div to display the approved application
+        const approvedDiv = document.createElement('div');
+        approvedDiv.classList.add('application', 'approved');
+        approvedDiv.innerHTML = `
+          <p>ID: ${approvedApplication.id}</p>
+        `;
+
+        // Add the approved application to the approved requests section
+        approvedRequestsDiv.appendChild(approvedDiv);
+      }
+    }
+
+    // Function to handle application disapproval
+    function disapproveApplication(applicationId, reason) {
+      // Find the disapproved application
+      const disapprovedApplication = applications.find(application => application.id === applicationId);
+      if (disapprovedApplication) {
+        // Remove the disapproved application from the applications list
+        const index = applications.indexOf(disapprovedApplication);
+        applications.splice(index, 1);
+
+        // Remove the application div from the applications section
+        const applicationDiv = document.querySelector(`.application:nth-child(${index + 1})`);
+        if (applicationDiv) {
+          applicationDiv.remove();
+        }
+
+        // Display the reason for disapproval
+        console.log(`Application ID: ${applicationId}`);
+        console.log(`Reason: ${reason}`);
+      }
+    }
+
+    // Function to confirm the action before applying it
+    function confirmAction(actionFunction, applicationId) {
+      if (confirm("Are you sure you want to proceed?")) {
+        actionFunction(applicationId);
+      }
+    }
+
+    // Function to confirm the disapproval action and prompt for a reason
+    function confirmDisapproval(applicationId) {
+      const reason = prompt("Please provide a reason for disapproval:");
+      if (reason !== null) {
+        disapproveApplication(applicationId, reason);
+      }
+    }
+  </script>
+</body>
+</html>
