@@ -67,9 +67,28 @@
 		 margin: 10px 0;
 	 }
  </style>
+ <style>
+ .floating-button {
+ 	position: fixed;
+ 	bottom: 670px;
+ 	right: 25px;
+ 	width: 30px;
+ 	height: 30px;
+ 	border-radius: 50%;
+ 	background-image: url('images/back2-01.png');
+ 	background-size: cover; /* Adjust the background size if needed */
+ 	background-repeat: no-repeat; /* Ensure the image doesn't repeat */
+ 	background-position: center; /* Center the image within the button */
+ 	text-align: center;
+ 	font-size: 0; /* Remove the font size to make the image fill the entire button */
+ 	line-height: 60px;
+ 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+ 	z-index: 9999;
+ }
+ </style>
 </head>
 <body>
-
+	<a href="Payments.html" class="floating-button"></a>
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('images/bgx-01.jpg');">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
@@ -98,6 +117,7 @@
 						<div class="input-wrapper">
 						<input type="number" id="amount" placeholder="Enter amount">
 					</div>
+				</div>
 
 					<br>
 
@@ -118,14 +138,17 @@
 
 <input type="checkbox" name="reminders" id="rem" onchange="activateButton(this)">  I want to receive reminders about future payments
 
+<form>
+
+</form>
 <div class="container-login100-form-btn">
     <div class="wrap-login100-form-btn">
       <div class="login100-form-bgbtn"></div>
-			
       <button class="login100-form-btn" onclick="showPopup()">
 
      PAY
       </button>
+
 			<div id="overlay" class="overlay"></div>
 
 				<div id="popup" class="popup">
@@ -149,14 +172,6 @@
 
 		</div>
 	</div>
-
-    </div>
-  </div>
-
-<br>
-
-
-
 
 				</form>
 			</div>
@@ -192,13 +207,7 @@
 		popup.style.display = "block";
 	}
 
-	function closePopup() {
-		// Close the overlay and the pop-up content
-		var overlay = document.getElementById("overlay");
-		overlay.style.display = "none";
-		var popup = document.getElementById("popup");
-		popup.style.display = "none";
-	}
+
 	function redirectHome() {
       // Redirect to a different page
       window.location.href = "ChomePage.html";

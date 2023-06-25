@@ -27,8 +27,68 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
 <!--===============================================================================================-->
+<style>
+	 /* Styles for the pop-up overlay */
+	 .overlay {
+		 display: none;
+		 position: fixed;
+		 top: 0;
+		 left: 0;
+		 width: 100%;
+		 height: 100%;
+		 background-color: rgba(0, 0, 0, 0.5);
+		 z-index: 9999;
+	 }
+
+	 /* Styles for the pop-up content */
+	 .popup {
+		 display: none;
+		 position: fixed;
+		 top: 50%;
+		 left: 50%;
+		 transform: translate(-50%, -50%);
+		 width: 400px;
+		 padding: 20px;
+		 background-color: #fff;
+		 border-radius: 5px;
+		 box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+		 z-index: 99999;
+	 }
+
+	 .popup h2 {
+		 font-family: cocon;
+
+		 margin-top: 0;
+	 }
+
+	 .popup p {
+		 font-family: cocon;
+
+		 margin: 10px 0;
+	 }
+ </style>
+<style>
+.floating-button {
+ position: fixed;
+ bottom: 680px;
+ right: 25px;
+ width: 30px;
+ height: 30px;
+ border-radius: 50%;
+ background-image: url('images/back2-01.png');
+ background-size: cover; /* Adjust the background size if needed */
+ background-repeat: no-repeat; /* Ensure the image doesn't repeat */
+ background-position: center; /* Center the image within the button */
+ text-align: center;
+ font-size: 0; /* Remove the font size to make the image fill the entire button */
+ line-height: 60px;
+ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+ z-index: 9999;
+}
+</style>
 </head>
 <body>
+	<a href="AccountDetails.html" class="floating-button"></a>
 
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('images/bgx-01.jpg');">
@@ -57,6 +117,10 @@
           </select>
            <span class="dropdown-arrowex"></span>
         </div>
+
+
+
+
 <br> <br>  <br>
 
         <div class="dropdownex">
@@ -77,17 +141,51 @@
           <br>
           <div class="input-wrapper">
           <input type="number" id="amount" placeholder="Enter amount">
-        </div
-        <br> <br>
+
+        </div>
+
+			</div>
+        <br>
+				<br>
+
+
+
         <div class="container-login100-form-btn">
                   <div class="wrap-login100-form-btn">
                     <div class="login100-form-bgbtn"></div>
-                    <button class="login100-form-btn">
+                    <button class="login100-form-btn" type='button' onclick="showPopup()">
               Convert
                     </button>
-                  </div>
-        </div>
-      </div>
+										<div id="overlay" class="overlay"></div>
+
+											<div id="popup" class="popup">
+												<h2>Exchange Successful</h2>
+												<div class="container-login100-form-btn">
+													<div class="wrap-login100-form-btn">
+														<div class="login100-form-bgbtn"></div>
+												<button class="login100-form-btn" type='reset' onclick="redirectHome()">Home</button>
+												</div>
+												</div>
+
+											<br>
+
+												<div class="container-login100-form-btn">
+													<div class="wrap-login100-form-btn">
+														<div class="login100-form-bgbtn"></div>
+												<button class="login100-form-btn" onclick="clearContent()">Close</button>
+
+
+											</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+
+
+
 
 <br>
 </section>
@@ -145,6 +243,7 @@
 
 
 
+</div>
 
 				</form>
 			</div>
@@ -170,6 +269,28 @@
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+	<script>
+	function showPopup() {
+		// Display the overlay and the pop-up content
+		var overlay = document.getElementById("overlay");
+		overlay.style.display = "block";
+		var popup = document.getElementById("popup");
+		popup.style.display = "block";
+	}
+
+
+	function redirectHome() {
+			// Redirect to a different page
+			window.location.href = "ChomePage.html";
+		}
+		function clearContent() {
+		 // Clear the content or perform any other necessary actions
+		 // ...
+
+		 // Reload the page
+		 window.location.reload();
+	 }
+</script>
 
 </body>
 </html>

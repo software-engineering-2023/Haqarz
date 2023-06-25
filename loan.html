@@ -28,9 +28,30 @@
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
+  <style>
+  .floating-button {
+    position: fixed;
+    bottom: 600px;
+    right: 25px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-image: url('images/back2-01.png');
+    background-size: cover; /* Adjust the background size if needed */
+    background-repeat: no-repeat; /* Ensure the image doesn't repeat */
+    background-position: center; /* Center the image within the button */
+    text-align: center;
+    font-size: 0; /* Remove the font size to make the image fill the entire button */
+    line-height: 60px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+  }
+  </style>
 </head>
 
 <body>
+  <a href="ChomePage.html" class="floating-button"></a>
+
   <div class="hero_area">
     <!-- header section strats -->
     <header class="header_section">
@@ -51,7 +72,7 @@
               <ul class="navbar-nav  ">
 
               </ul>
-            
+
             </div>
           </div>
         </nav>

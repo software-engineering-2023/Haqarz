@@ -24,7 +24,7 @@
 	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/main2.css">
 <!--===============================================================================================-->
 <style>
 .floating-button {
@@ -81,7 +81,7 @@
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button type="submit" id="dareen"class="btn btn-primary btn-user btn-block">
+							<button class="login100-form-btn" type="submit" id="dareen">
 								Login
 						 </button>
 						</div>
@@ -118,6 +118,8 @@
 <!--===============================================================================================-->
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 	<script src="js/main.js"></script>
 	<script>
     var form = document.querySelector('.login100-form');
@@ -136,7 +138,7 @@
         else if (usernameInput.value === 'banker' &&  passwordInput.value === 'banker')
             window.location.href = 'BankerHomePage.html';
         else
-            alert('Invalid username or password');
+				sweetAlert('error', "Invalid username or password", 'error');
     }
 </script>
 
